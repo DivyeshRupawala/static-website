@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BullBrain Capital — Compounding Wealth Through Smart Trading</title>
+<meta name="description" content="BullBrain Capital — algorithmic trading, portfolio management and trading education for equities, options and crypto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="false">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark">B</span>
+      <span class="logo-text">BullBrain Capital<span class="sub">Compounding Wealth</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#director">About</a>
+      <a href="#charts">Live Charts</a>
+      <a href="#services">Services</a>
+      <a href="#markets">Markets</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost" id="loginBtn">Log In</a>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i class="dot"></i> Live Markets Active</span>
+        <h1>Compounding<br><span>Wealth</span></h1>
+        <p class="lede">Through Smart Trading</p>
+        <p class="desc">Join thousands of traders who trust BullBrain Capital for data-driven strategies, real-time market insights, and portfolio growth with proven risk management.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Start Trading Today →</a>
+          <a href="#charts" class="btn btn-ghost">View Live Charts</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>10K+</b><span>Active Traders</span></div>
+          <div class="stat"><b>₹500Cr+</b><span>AUM Managed</span></div>
+          <div class="stat"><b>92%</b><span>Success Rate</span></div>
+        </div>
+      </div>
+
+      <div class="card portfolio-card">
+        <div class="card-head">
+          <div>
+            <h4>Portfolio Performance</h4>
+            <span class="muted">Last 30 Days</span>
+          </div>
+          <div class="gain">+24.7%<span>Total Returns</span></div>
+        </div>
+        <canvas id="portfolioChart" width="480" height="220" style="width:100%;height:220px;"></canvas>
+        <div class="chart-labels">
+          <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span><span>Week 5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIRECTOR ================= -->
+  <section class="section" id="director">
+    <div class="wrap director-grid">
+      <div class="director-photo">
+        <div class="avatar">
+          <svg width="70%" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="100" cy="120" rx="70" ry="26" fill="#0f1815"/>
+            <path d="M40 90 C40 60 65 40 100 40 C135 40 160 60 160 90 C160 112 140 128 100 128 C60 128 40 112 40 90 Z" fill="#182620"/>
+            <circle cx="70" cy="82" r="7" fill="#22d98a"/>
+            <circle cx="130" cy="82" r="7" fill="#22d98a"/>
+            <path d="M55 55 C45 35 55 20 65 25 C68 40 65 50 55 55 Z" fill="#1e3129"/>
+            <path d="M145 55 C155 35 145 20 135 25 C132 40 135 50 145 55 Z" fill="#1e3129"/>
+            <path d="M85 100 Q100 112 115 100" stroke="#22d98a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="bar-row"><span>Trading Expertise</span><span>96%</span></div>
+        <div class="bar"><i style="width:96%"></i></div>
+        <div class="bar-row"><span>Risk Management</span><span>93%</span></div>
+        <div class="bar"><i style="width:93%"></i></div>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Telegram">✈</a>
+        </div>
+      </div>
+
+      <div class="director-name-block">
+        <span class="eyebrow">Meet the Director</span>
+        <h3>Parul Singh</h3>
+        <p class="role">10 Years of Trading Excellence</p>
+        <p>With a decade of experience navigating bull and bear markets, Parul Singh has established BullBrain Capital as a trusted name in algorithmic trading and wealth management.</p>
+
+        <div class="feature-row">
+          <div class="feature-icon">📈</div>
+          <div>
+            <h5>Strategic Trading Systems</h5>
+            <p>Developed proprietary algorithms that consistently outperform market indices with controlled risk exposure.</p>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon">🛡️</div>
+          <div>
+            <h5>Risk-First Philosophy</h5>
+            <p>Capital preservation is paramount. Every trade follows strict position sizing and stop-loss protocols.</p>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-icon">🎓</div>
+          <div>
+            <h5>Educator &amp; Mentor</h5>
+            <p>Trained 5,000+ traders through comprehensive courses on technical analysis and market psychology.</p>
+          </div>
+        </div>
+        <a href="#contact" class="link-arrow">Schedule a Consultation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE CHARTS ================= -->
+  <section class="section section-alt" id="charts">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Live Market Data</span>
+        <h2>Real-Time Trading Charts</h2>
+        <p>Professional-grade candlestick charts with advanced indicators. Monitor market movements and execute trades with precision.</p>
+      </div>
+
+      <div class="chart-panel">
+        <div class="chart-panel-head">
+          <div class="chart-title">
+            <div>
+              <h3>NIFTY 50</h3>
+              <small>INDEX·NSE:NIFTY</small>
+            </div>
+            <span class="price">24,813.45</span>
+            <span class="chg">+304.25 (+1.24%)</span>
+          </div>
+          <div class="timeframes">
+            <button data-tf="1D" class="active">1D</button>
+            <button data-tf="1W">1W</button>
+            <button data-tf="1M">1M</button>
+            <button data-tf="3M">3M</button>
+            <button data-tf="1Y">1Y</button>
+          </div>
+        </div>
+        <canvas id="candleChart" class="candlestick-canvas"></canvas>
+        <div class="ohlc-row">
+          <div class="ohlc-box"><span>Open</span><b>24,509.20</b></div>
+          <div class="ohlc-box high"><span>High</span><b>24,890.50</b></div>
+          <div class="ohlc-box low"><span>Low</span><b id="lowVal">24,487.25</b></div>
+          <div class="ohlc-box"><span>Volume</span><b>1.2M</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Comprehensive Trading Services</h2>
+        <p>From beginners to institutions, we provide tailored solutions to maximize your trading potential and grow your wealth.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon icon-blue">⚙️</div>
+          <h4>Algorithmic Trading</h4>
+          <p>Deploy automated trading strategies powered by AI and machine learning. Execute trades with precision and speed.</p>
+          <ul>
+            <li>Custom Strategy Development</li>
+            <li>Backtesting &amp; Optimization</li>
+            <li>Real-Time Execution</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-green">📊</div>
+          <h4>Portfolio Management</h4>
+          <p>Professional management of your investments with diversified strategies across equity, derivatives, and crypto.</p>
+          <ul>
+            <li>Active Risk Management</li>
+            <li>Quarterly Rebalancing</li>
+            <li>Performance Reports</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-orange">🖥️</div>
+          <h4>Trading Education</h4>
+          <p>Master the markets with comprehensive courses on technical analysis, options trading, and risk management.</p>
+          <ul>
+            <li>Live Trading Sessions</li>
+            <li>1-on-1 Mentorship</li>
+            <li>Lifetime Access</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-purple">🔔</div>
+          <h4>Trading Signals</h4>
+          <p>Receive real-time buy/sell alerts with entry, target, and stop-loss levels via Telegram and mobile app.</p>
+          <ul>
+            <li>Intraday &amp; Swing Calls</li>
+            <li>85%+ Accuracy Rate</li>
+            <li>24/7 Market Monitoring</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-teal">📉</div>
+          <h4>Options Trading Desk</h4>
+          <p>Specialized options strategies including straddles, strangles, and spreads for all market conditions.</p>
+          <ul>
+            <li>Weekly &amp; Monthly Expiry</li>
+            <li>Low-Risk Premium Selling</li>
+            <li>Hedging Strategies</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-pink">₿</div>
+          <h4>Crypto Trading</h4>
+          <p>Navigate the volatile crypto markets with institutional-grade tools, arbitrage opportunities, and DeFi strategies.</p>
+          <ul>
+            <li>Spot &amp; Futures Trading</li>
+            <li>Cold Wallet Security</li>
+            <li>Yield Farming Insights</li>
+          </ul>
+          <a href="#" class="link-arrow">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARKET STATS ================= -->
+  <section class="section section-alt" id="markets">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Market Overview</span>
+        <h2>Today's Market Stats</h2>
+        <p>Track real-time performance across indices, stocks, and cryptocurrencies with instant gainers and losers.</p>
+      </div>
+
+      <div class="market-grid">
+        <div class="market-col">
+          <h4>📈 Top Gainers</h4>
+          <div class="stock-row gain">
+            <div><div class="name">RELIANCE</div><div class="sub">Reliance Industries</div></div>
+            <div class="price">₹2,847.65<span class="pct">+5.42%</span></div>
+          </div>
+          <div class="stock-row gain">
+            <div><div class="name">TCS</div><div class="sub">Tata Consultancy</div></div>
+            <div class="price">₹4,123.80<span class="pct">+4.28%</span></div>
+          </div>
+          <div class="stock-row gain">
+            <div><div class="name">HDFC BANK</div><div class="sub">HDFC Bank Ltd</div></div>
+            <div class="price">₹1,678.25<span class="pct">+3.81%</span></div>
+          </div>
+          <div class="stock-row gain">
+            <div><div class="name">INFY</div><div class="sub">Infosys Limited</div></div>
+            <div class="price">₹1,892.40<span class="pct">+3.67%</span></div>
+          </div>
+        </div>
+
+        <div class="market-col">
+          <h4>📉 Top Losers</h4>
+          <div class="stock-row loss">
+            <div><div class="name">ADANIENT</div><div class="sub">Adani Enterprises</div></div>
+            <div class="price">₹2,234.15<span class="pct">-3.56%</span></div>
+          </div>
+          <div class="stock-row loss">
+            <div><div class="name">WIPRO</div><div class="sub">Wipro Limited</div></div>
+            <div class="price">₹487.60<span class="pct">-2.83%</span></div>
+          </div>
+          <div class="stock-row loss">
+            <div><div class="name">TATAMOTORS</div><div class="sub">Tata Motors</div></div>
+            <div class="price">₹712.35<span class="pct">-2.41%</span></div>
+          </div>
+          <div class="stock-row loss">
+            <div><div class="name">SBIN</div><div class="sub">State Bank of India</div></div>
+            <div class="price">₹823.90<span class="pct">-1.94%</span></div>
+          </div>
+        </div>
+
+        <div class="card sentiment-card">
+          <h4>Market Sentiment Index</h4>
+          <div class="gauge-wrap">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" stroke="#1c2622" stroke-width="10" fill="none"/>
+              <circle cx="60" cy="60" r="52" stroke="#22d98a" stroke-width="10" fill="none"
+                stroke-dasharray="326.7" stroke-dashoffset="65.3" stroke-linecap="round"/>
+            </svg>
+            <div class="gauge-label">80%</div>
+          </div>
+          <div class="sentiment-tag">Fear &amp; Greed<b>Extreme Greed</b></div>
+          <div class="mini-stats">
+            <div><b style="color:var(--accent)">+1.24%</b><span>NIFTY 50 Daily Change</span></div>
+            <div><b>₹2.3T</b><span>Market Cap Today</span></div>
+            <div><b>187</b><span>Adv/Dec Ratio</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section" id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Client Success</span>
+        <h2>Trusted by Thousands of Traders</h2>
+        <p>See what our clients say about their journey to financial freedom with BullBrain Capital.</p>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Parul's algorithmic strategies transformed my portfolio. From 8% annual returns to 32% year-over-year. The risk management is exceptional — I've never felt more confident trading."</p>
+          <div class="testi-person">
+            <div class="avatar-circle" style="background:#22d98a">RK</div>
+            <div><b>Rajesh Kumar</b><span>Portfolio Manager, Mumbai</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"As a beginner, I was terrified of the markets. BullBrain's education program taught me technical analysis and psychology. Now I'm consistently profitable — made ₹4.1L in 6 months!"</p>
+          <div class="testi-person">
+            <div class="avatar-circle" style="background:#4a8ef2">PS</div>
+            <div><b>Priya Sharma</b><span>Retail Trader, Bangalore</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"The options trading desk is phenomenal. Their straddle strategies during earnings seasons have delivered 40-60% returns consistently. Best investment decision I've made."</p>
+          <div class="testi-person">
+            <div class="avatar-circle" style="background:#f0a04a">AM</div>
+            <div><b>Amit Mehta</b><span>HNI Investor, Delhi</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section section-alt" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Start Your Trading Journey Today</h2>
+        <p>Ready to compound your wealth? Fill out the form and our team will reach out within 24 hours to discuss your trading goals.</p>
+
+        <div class="contact-item">
+          <div class="ic">✉️</div>
+          <div><b>Email Us</b><span>support@bullbraincapital.com</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">📞</div>
+          <div><b>Call Us</b><span>+91 98765 43210</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">📍</div>
+          <div><b>Visit Us</b><span>Financial District, Mumbai, India</span></div>
+        </div>
+
+        <div class="contact-social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Telegram">✈</a>
+          <a href="#" aria-label="WhatsApp">📱</a>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="field">
+              <label for="serviceInterest">Service Interest</label>
+              <select id="serviceInterest" name="serviceInterest">
+                <option>Algorithmic Trading</option>
+                <option>Portfolio Management</option>
+                <option>Trading Education</option>
+                <option>Trading Signals</option>
+                <option>Options Trading Desk</option>
+                <option>Crypto Trading</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:16px;">
+            <label for="capital">Investment Capital</label>
+            <select id="capital" name="capital">
+              <option>₹1L – ₹5L</option>
+              <option>₹5L – ₹25L</option>
+              <option>₹25L – ₹1Cr</option>
+              <option>₹1Cr+</option>
+            </select>
+          </div>
+          <div class="field" style="margin-bottom:8px;">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your trading goals..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:12px;">Send Message ➤</button>
+          <p class="form-status" id="formStatus"></p>
+          <p class="form-note">By submitting this form, you agree to our Terms of Service and Privacy Policy.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark">B</span>
+          <span class="logo-text">BullBrain Capital<span class="sub">Compounding Wealth</span></span>
+        </a>
+        <p>Leading algorithmic trading firm specializing in equity, derivatives, and cryptocurrency markets. Empowering traders with data-driven strategies since 2014.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#director">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#charts">Live Charts</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Risk Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BullBrain Capital. All rights reserved. | SEBI Registered Investment Advisor</span>
+      <span class="warn">⚠ Trading involves risk. Past performance is not indicative of future results.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
