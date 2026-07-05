@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bull Brain Management Consultancy — Trading Education, Research & Strategy</title>
-<meta name="description" content="Bull Brain Management Consultancy — trading education, proprietary trading, and strategy consulting across Indian and global markets.">
+<title>BullBrain Management Consultancy — Compounding Your Wealth</title>
+<meta name="description" content="BullBrain Management Consultancy — trading education, proprietary trading, and strategy consulting across Indian and global markets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -12,27 +12,23 @@
 <body>
 
 <!-- ================= TICKER ================= -->
-<div class="ticker" aria-hidden="false">
+<!-- <div class="ticker" aria-hidden="false">
   <div class="ticker-track" id="tickerTrack"></div>
-</div>
+</div> -->
 
 <!-- ================= HEADER ================= -->
 <header class="site-header">
-  <nav class="nav">
-    <a href="#top" class="logo">
-      <span class="logo-mark">B</span>
-      <span class="logo-text">Bull Brain<span class="sub">Management Consultancy</span></span>
-    </a>
-    <div class="nav-links">
+  <nav class="nav">    
+    <div class="logo nav-links">
       <a href="#top">Home</a>
-      <a href="#director">About</a>
-      <a href="#charts">Live Charts</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#markets">Markets</a>
+      <a href="#markets">Investments</a>
       <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="#" class="btn btn-ghost" id="loginBtn">Log In</a>
+      <!-- <a href="#" class="btn btn-ghost" id="loginBtn">Log In</a> -->
       <a href="#contact" class="btn btn-primary">Get Started</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
     </div>
@@ -43,20 +39,33 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero">
+    <div class="wrap">
+      <div>
+        <center>
+          <img style="display: block;width: 300px;border: 5px solid green;border-radius: 8px;" src="assets/logo.PNG" alt="BullBrain Management Consultancy Logo" class="hero-logo">
+        <h1>BullBrain Management Consultancy</h1>
+        <p class="lede">Compounding Your Wealth</p>       
+        </center>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ================= FEATURE SPOTLIGHT (from design) ================= -->
+  <section class="section" id="feature-spotlight">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow"><i class="dot"></i> Live Markets Active</span>
-        <h1>Compounding<br><span>Wealth</span></h1>
-        <p class="lede">Through data, discipline, and real-world trading expertise.</p>
-        <p class="desc">Bull Brain Management Consultancy helps individuals and firms navigate Indian and global markets with risk-first strategies, trading education, and practical research.</p>
+        <span class="eyebrow"><i class="dot"></i> Live Trading Platform</span>
+        <h2 style="font-size:44px; margin-top:18px; line-height:1.03">Trade Smarter with<br><span style="color:var(--accent);">AI-Powered Market Intelligence</span></h2>
+        <p class="desc">Join thousands of traders using BullBrain's advanced analytics, real-time signals, and expert strategies to maximise outcomes across Forex, Commodities, and Indices.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Start Your Journey →</a>
-          <a href="#charts" class="btn btn-ghost">View Market Insights</a>
+          <a href="#contact" class="btn btn-primary">Start Trading Now</a>
+          <a href="#" class="btn btn-ghost">View Charts</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><b>1,00,000+</b><span>Traders to Empower</span></div>
-          <div class="stat"><b>25+</b><span>Market Reports</span></div>
-          <div class="stat"><b>10+</b><span>Years of Experience</span></div>
+
+        <div class="hero-stats" style="margin-top:36px; gap:48px;">
+          <div class="stat"><b>50K+</b><span>Active Users</span></div>
+          <div class="stat"><b>2.5M+</b><span>Trades Executed</span></div>
+          <div class="stat"><b>87%</b><span>Win Rate %</span></div>
         </div>
       </div>
 
@@ -64,13 +73,23 @@
         <div class="card-head">
           <div>
             <h4>Portfolio Performance</h4>
-            <span class="muted">Illustrative multi-asset view</span>
+            <span class="muted">Monthly view</span>
           </div>
-          <div class="gain">+24.7%<span>Total Returns</span></div>
+          <div class="gain">+24.8%<span>Total Returns</span></div>
         </div>
-        <canvas id="portfolioChart" width="480" height="220" style="width:100%;height:220px;"></canvas>
-        <div class="chart-labels">
-          <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span><span>Week 5</span>
+        <canvas id="portfolioChart2" class="portfolio-chart" width="560" height="300" style="width:100%;height:300px;"></canvas>
+        <div class="chart-labels" style="margin-top:12px;">
+          <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:14px;">
+          <div style="flex:1; background:var(--bg-alt); border:1px solid var(--card-border); border-radius:10px; padding:12px;">
+            <small style="display:block; color:var(--text-faint);">Total Profit</small>
+            <div style="font-family:var(--font-mono); font-size:18px; font-weight:700;">$12,450</div>
+          </div>
+          <div style="flex:1; background:var(--bg-alt); border:1px solid var(--card-border); border-radius:10px; padding:12px;">
+            <small style="display:block; color:var(--text-faint);">Win Streak</small>
+            <div style="font-family:var(--font-display); font-size:18px; font-weight:700;">14 Days</div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,30 +99,12 @@
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">About Bull Brain</span>
+        <span class="eyebrow">About</span>
         <h2>Trading with purpose, discipline, and proof</h2>
-        <p>Bull Brain Management Consultancy is a specialized trading and financial education firm focused on delivering consistent returns across high-growth markets. We actively trade in Indian Stock Market, Forex, Commodities, Cryptocurrency, and Indices,  leveraging data-driven strategies, risk management, and market psychology to generate strong performance.</p>
+        <p>BullBrain Management Consultancy is a specialized trading and financial education firm focused on delivering consistent returns across high-growth markets. We actively trade in Indian Stock Market, Forex, Commodities, Cryptocurrency, and Indices, leveraging data-driven strategies, risk management, and market psychology to generate strong performance.</p>
       </div>
 
-      <div class="director-grid">
-        <div class="card director-photo">
-          <div class="avatar">
-            <svg width="70%" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="100" cy="120" rx="70" ry="26" fill="#0f1815"/>
-              <path d="M40 90 C40 60 65 40 100 40 C135 40 160 60 160 90 C160 112 140 128 100 128 C60 128 40 112 40 90 Z" fill="#182620"/>
-              <circle cx="70" cy="82" r="7" fill="#22d98a"/>
-              <circle cx="130" cy="82" r="7" fill="#22d98a"/>
-              <path d="M55 55 C45 35 55 20 65 25 C68 40 65 50 55 55 Z" fill="#1e3129"/>
-              <path d="M145 55 C155 35 145 20 135 25 C132 40 135 50 145 55 Z" fill="#1e3129"/>
-              <path d="M85 100 Q100 112 115 100" stroke="#22d98a" stroke-width="3" fill="none" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bar-row"><span>Multi-Asset Expertise</span><span>96%</span></div>
-          <div class="bar"><i style="width:96%"></i></div>
-          <div class="bar-row"><span>Risk-First Execution</span><span>93%</span></div>
-          <div class="bar"><i style="width:93%"></i></div>
-        </div>
-
+      <!-- <div class="director-grid">
         <div class="director-name-block">
           <div class="feature-row">
             <div class="feature-icon">🎯</div>
@@ -128,40 +129,7 @@
           </div>
           <a href="#services" class="link-arrow">Explore our services →</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WHY BULL BRAIN ================= -->
-  <section class="section section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Why Bull Brain</span>
-        <h2>Built for traders who want consistency, not noise</h2>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon icon-blue">📈</div>
-          <h4>Multi-Asset Experts</h4>
-          <p>We actively trade Indian equities, forex, commodities, crypto, and indices with a data-led approach.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-green">🛡️</div>
-          <h4>Risk-First Philosophy</h4>
-          <p>Capital protection and drawdown control are central to every trading decision we make.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-orange">🎓</div>
-          <h4>Education That Works</h4>
-          <p>From beginners to advanced traders, we turn learners into independent decision-makers with practical support.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon icon-purple">🧠</div>
-          <h4>Real Traders, Real Results</h4>
-          <p>Our strategies are built in live markets, tested rigorously, and taught with transparency.</p>
-        </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -170,92 +138,148 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">What We Do</span>
-        <h2>Practical market support for traders and firms</h2>
-        <p>We combine proprietary execution, education, and research-led consulting so clients can participate with confidence and discipline.</p>
+        <!-- <h2>Practical market support for traders and firms</h2>
+        <p>We combine proprietary execution, education, and research-led consulting so clients can participate with confidence and discipline.</p> -->
       </div>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon icon-blue">⚙️</div>
           <h4>Proprietary Trading</h4>
-          <p>Active trading across Indian equities, forex, commodities, crypto, and indices using data-driven, risk-first setups.</p>
+          <p>Actively trading Indian equities, forex pairs, commodities, and crypto with disciplined strategies focused on capital protection and consistent alpha generation.</p>
         </div>
         <div class="service-card">
           <div class="service-icon icon-green">🎓</div>
           <h4>Trading Education &amp; Mentorship</h4>
-          <p>Training programs that cover technical analysis, fundamentals, psychology, risk management, and live-market application.</p>
+          <p>Professional training programs covering technical analysis, fundamental research, risk management, and trading psychology.</p>
         </div>
         <div class="service-card">
           <div class="service-icon icon-orange">🧭</div>
           <h4>Strategy Consulting</h4>
-          <p>Custom market strategies and portfolio structuring for individuals and firms seeking systematic participation.</p>
+          <p>Custom market strategies and portfolio structuring for individuals and firms looking to participate in financial markets systematically.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= VISION / STRENGTHS ================= -->
+  <!-- ================= CORE STRENGTHS ================= -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Vision &amp; Strengths</span>
-        <h2>Built to scale trust, skill, and performance</h2>
+        <span class="eyebrow">Core Strengths</span>
+        <h2>Our key advantages</h2>
+        <p>Proven capability across asset classes, a risk-first framework, hands-on education, and performance-driven methodologies.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h4>Multi-Asset Expertise</h4>
+          <p>Proven track record across equities, forex, commodities, and crypto.</p>
+        </div>
+        <div class="service-card">
+          <h4>Risk-First Approach</h4>
+          <p>Capital preservation and drawdown control are central to all trading decisions.</p>
+        </div>
+        <div class="service-card">
+          <h4>Education-Driven</h4>
+          <p>We empower traders with practical skills, live sessions, and post-trade analysis.</p>
+        </div>
+        <div class="service-card">
+          <h4>Performance Oriented</h4>
+          <p>Focus on sustainable returns through systematic, backtested methodologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY BULLBRAIN ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why BullBrain</span>
+        <!-- <h2>Built for traders who want consistency, not noise</h2> -->
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon icon-blue">📈</div>
+          <h4>Real Traders, Real Results</h4>
+          <p>Strategies built and traded live on our desk, not just theory.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-green">🛡️</div>
+          <h4>Risk-First Philosophy</h4>
+          <p>We prioritise capital protection over profit chasing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-orange">🎓</div>
+          <h4>Education That Works</h4>
+          <p>Practical training that turns learners into independent traders.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon icon-purple">🧠</div>
+          <h4>Multi-Asset Coverage</h4>
+          <p>Indian stocks, forex, commodities, and crypto — we trade them all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VISION ================= -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Vision</span>
+        <h2>We envision a future where:</h2>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
           <h4>Performance Leadership</h4>
-          <p>We aim to set the benchmark for multi-asset alpha in India while maintaining institutional-grade risk management.</p>
+          <p>Set the benchmark for multi-asset alpha in India with institutional-grade risk management.</p>
         </div>
         <div class="service-card">
           <h4>Education at Scale</h4>
-          <p>Our goal is to train 1,00,000+ independent traders through live-market learning and actionable research.</p>
+          <p>Train 1,00,000+ independent traders through live-market learning and actionable research.</p>
         </div>
         <div class="service-card">
           <h4>Trust &amp; Infrastructure</h4>
-          <p>We are building a full-stack ecosystem combining education, research, trading, and technology.</p>
+          <p>Build a full-stack trading ecosystem combining education, research, trading, and tech tools.</p>
         </div>
         <div class="service-card">
           <h4>Impact</h4>
-          <p>We want to shift trading culture from speculation to skill by helping traders build long-term, disciplined wealth.</p>
+          <p>Shift trading culture from speculation to skill, creating generational wealth for retail participants.</p>
         </div>
       </div>
+      In one line:
+To build India’s largest, most trusted trading ecosystem — where 1,00,000+ traders compound wealth using strategies proven to deliver Higher returns.
+By 2031–2036, we will be the benchmark for performance and education across Indian Stock Markets and Global Markets. Our research will drive 2000+ global market reports, our trading desk will lead with institutional-grade discipline, and our community will prove that skill beats speculation.
+
     </div>
   </section>
 
-  <!-- ================= LIVE CHARTS ================= -->
-  <section class="section" id="charts">
+  <!-- ================= MISSION / CORE VALUES ================= -->
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Live Market Data</span>
-        <h2>Market intelligence you can act on</h2>
-        <p>Monitor key indices with professional-grade charts and structured insights from our research desk.</p>
+        <span class="eyebrow">Mission</span>
+        <p>To empower individuals and businesses to master financial markets through data, discipline, and real-world trading expertise.</p>
       </div>
 
-      <div class="chart-panel">
-        <div class="chart-panel-head">
-          <div class="chart-title">
-            <div>
-              <h3>NIFTY 50</h3>
-              <small>INDEX·NSE:NIFTY</small>
-            </div>
-            <span class="price">24,813.45</span>
-            <span class="chg">+304.25 (+1.24%)</span>
-          </div>
-          <div class="timeframes">
-            <button data-tf="1D" class="active">1D</button>
-            <button data-tf="1W">1W</button>
-            <button data-tf="1M">1M</button>
-            <button data-tf="3M">3M</button>
-            <button data-tf="1Y">1Y</button>
-          </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h4>Mission</h4>
+          <p>To empower individuals and businesses to master financial markets through data, discipline, and real-world trading expertise.</p>
+          <ul>
+            <li><b>Trade:</b> Execute systematic, risk-first strategies across asset classes.</li>
+            <li><b>Educate:</b> Train traders with proven, data-driven frameworks.</li>
+            <li><b>Publish:</b> Deliver institutional-grade research and market reports.</li>
+            <li><b>Elevate:</b> Shift trading culture from gambling to skill.</li>
+          </ul>
         </div>
-        <canvas id="candleChart" class="candlestick-canvas"></canvas>
-        <div class="ohlc-row">
-          <div class="ohlc-box"><span>Open</span><b>24,509.20</b></div>
-          <div class="ohlc-box high"><span>High</span><b>24,890.50</b></div>
-          <div class="ohlc-box low"><span>Low</span><b id="lowVal">24,487.25</b></div>
-          <div class="ohlc-box"><span>Volume</span><b>1.2M</b></div>
+        <div class="service-card">
+          <h4>Core Values</h4>
+          <p>Performance with proof, Risk-first always, Transparency over hype, Global mindset with Indian edge, Skill compounds.</p>
         </div>
       </div>
     </div>
@@ -266,15 +290,7 @@
     <div class="wrap director-grid">
       <div class="director-photo">
         <div class="avatar">
-          <svg width="70%" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="100" cy="120" rx="70" ry="26" fill="#0f1815"/>
-            <path d="M40 90 C40 60 65 40 100 40 C135 40 160 60 160 90 C160 112 140 128 100 128 C60 128 40 112 40 90 Z" fill="#182620"/>
-            <circle cx="70" cy="82" r="7" fill="#22d98a"/>
-            <circle cx="130" cy="82" r="7" fill="#22d98a"/>
-            <path d="M55 55 C45 35 55 20 65 25 C68 40 65 50 55 55 Z" fill="#1e3129"/>
-            <path d="M145 55 C155 35 145 20 135 25 C132 40 135 50 145 55 Z" fill="#1e3129"/>
-            <path d="M85 100 Q100 112 115 100" stroke="#22d98a" stroke-width="3" fill="none" stroke-linecap="round"/>
-          </svg>
+          <img src="assets/logo.PNG" alt="Parul Singh & Prashant Raj">
         </div>
         <div class="bar-row"><span>Trading Expertise</span><span>96%</span></div>
         <div class="bar"><i style="width:96%"></i></div>
@@ -318,40 +334,73 @@
   <section class="section section-alt" id="services">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">What We Offer</span>
-        <h2>Services built around capital protection and performance</h2>
-        <p>We combine proprietary trading, education, and strategy consulting to help clients participate in markets with clarity.</p>
+        <span class="eyebrow">Services</span>        
       </div>
 
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon icon-blue">⚙️</div>
-          <h4>Proprietary Trading</h4>
-          <p>Systematic trading across Indian equities, forex, commodities, and crypto with focus on capital preservation and alpha generation.</p>
+          <div class="service-icon icon-blue">📡</div>
+          <h4>Live Market Analysis</h4>
+          <p>Real-time technical analysis and AI-powered signals for major currency pairs, commodities, and indices.</p>
           <ul>
-            <li>Disciplined execution</li>
-            <li>Risk-controlled setups</li>
-            <li>Multi-asset coverage</li>
+            <li>24/7 market coverage</li>
+            <li>Multi-timeframe analysis</li>
+            <li>Trade alerts & commentary</li>
           </ul>
         </div>
+
         <div class="service-card">
-          <div class="service-icon icon-green">🎓</div>
-          <h4>Trading Education &amp; Mentorship</h4>
-          <p>Professional training for beginners and professionals covering technical analysis, fundamentals, risk, and psychology.</p>
+          <div class="service-icon icon-green">📊</div>
+          <h4>Portfolio Management</h4>
+          <p>Professional management across equity, derivatives, and crypto with active risk controls.</p>
           <ul>
-            <li>Live market sessions</li>
-            <li>Hands-on mentorship</li>
-            <li>Practical trading frameworks</li>
+            <li>Active risk management</li>
+            <li>Quarterly rebalancing</li>
+            <li>Performance reporting</li>
           </ul>
         </div>
+
         <div class="service-card">
-          <div class="service-icon icon-orange">🧭</div>
-          <h4>Strategy Consulting</h4>
-          <p>Tailored market strategies and portfolio structures for individuals and firms looking to trade systematically.</p>
+          <div class="service-icon icon-purple">⚙️</div>
+          <h4>Algorithmic Trading</h4>
+          <p>Automated strategies and execution tools that run 24/7 with strict risk protocols.</p>
           <ul>
-            <li>Custom market strategies</li>
-            <li>Portfolio structuring</li>
-            <li>Research-led decision support</li>
+            <li>Custom EA development</li>
+            <li>Backtesting & optimisation</li>
+            <li>Execution-grade systems</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-orange">🎓</div>
+          <h4>Trading Education</h4>
+          <p>Comprehensive courses from beginner to advanced, focusing on practical skills and live-market application.</p>
+          <ul>
+            <li>1-on-1 mentorship</li>
+            <li>Live trading sessions</li>
+            <li>Lifetime access to materials</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-pink">₿</div>
+          <h4>Crypto Trading</h4>
+          <p>Navigate volatile crypto markets with institutional-grade research and risk-first strategies.</p>
+          <ul>
+            <li>Spot & futures strategies</li>
+            <li>On-chain & cycle analysis</li>
+            <li>Security & custody guidance</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-teal">🛡️</div>
+          <h4>Risk Management</h4>
+          <p>Advanced position sizing, drawdown controls, and portfolio-level hedging to protect capital.</p>
+          <ul>
+            <li>Drawdown protection</li>
+            <li>Position sizing frameworks</li>
+            <li>Account monitoring</li>
           </ul>
         </div>
       </div>
@@ -362,9 +411,9 @@
   <section class="section" id="markets">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Investment Verticals</span>
-        <h2>How we target higher returns across asset classes</h2>
-        <p>Our framework blends research, timing, and discipline to manage risk across Indian and global markets.</p>
+        <span class="eyebrow">Investment</span>
+        <h2>Bull Brain Investment Verticals Matrix</h2>
+        <p>How we target Higher returns across asset classes</p>
       </div>
 
       <div class="services-grid">
@@ -414,7 +463,7 @@
       <div class="section-head">
         <span class="eyebrow">Client Success</span>
         <h2>Trusted by traders building confidence and capability</h2>
-        <p>See how our clients describe their journey with Bull Brain Management Consultancy.</p>
+        <p>See how our clients describe their journey with BullBrain Management Consultancy.</p>
       </div>
 
       <div class="testi-grid">
@@ -532,7 +581,7 @@
       <div class="footer-brand">
         <a href="#top" class="logo">
           <span class="logo-mark">B</span>
-          <span class="logo-text">Bull Brain<span class="sub">Management Consultancy</span></span>
+          <span class="logo-text">BullBrain Management Consultancy<span class="sub">Compounding Your Wealth</span></span>
         </a>
         <p>Specialized trading and financial education firm focused on delivering consistent returns across Indian and global markets.</p>
       </div>
@@ -555,7 +604,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Bull Brain Management Consultancy. All rights reserved.</span>
+      <span>© 2026 BullBrain Management Consultancy. All rights reserved.</span>
       <span class="warn">⚠ Trading involves risk. Past performance is not indicative of future results.</span>
     </div>
   </div>

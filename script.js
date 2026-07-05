@@ -41,58 +41,63 @@ function renderContactInfo(){
 
 /* ---------------- Hero line chart ---------------- */
 function drawPortfolioChart(){
-  const canvas = document.getElementById("portfolioChart");
-  if(!canvas) return;
-  const ctx = canvas.getContext("2d");
-  const dpr = window.devicePixelRatio || 1;
-  const cssW = canvas.clientWidth || 480;
-  const cssH = 220;
-  canvas.width = cssW * dpr;
-  canvas.height = cssH * dpr;
-  ctx.scale(dpr, dpr);
+  const canvases = document.querySelectorAll('.portfolio-chart');
+  if(!canvases || canvases.length === 0) return;
 
-  const values = SITE_CONTENT.portfolio.values;
-  const min = Math.min(...values) * 0.96;
-  const max = Math.max(...values) * 1.04;
-  const padX = 10, padY = 14;
-  const w = cssW - padX * 2;
-  const h = cssH - padY * 2;
+  canvases.forEach(canvas => {
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.clientWidth || 480;
+    // allow canvas to determine its height via CSS, fallback to 220
+    const cssH = canvas.clientHeight || 220;
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(dpr, dpr);
 
-  const pts = values.map((v, i) => ({
-    x: padX + (i / (values.length - 1)) * w,
-    y: padY + h - ((v - min) / (max - min)) * h
-  }));
+    const values = SITE_CONTENT.portfolio.values;
+    const min = Math.min(...values) * 0.96;
+    const max = Math.max(...values) * 1.04;
+    const padX = 10, padY = 14;
+    const w = cssW - padX * 2;
+    const h = cssH - padY * 2;
 
-  // gradient fill under the line
-  const grad = ctx.createLinearGradient(0, 0, 0, cssH);
-  grad.addColorStop(0, "rgba(34,217,138,0.35)");
-  grad.addColorStop(1, "rgba(34,217,138,0.0)");
+    const pts = values.map((v, i) => ({
+      x: padX + (i / (values.length - 1)) * w,
+      y: padY + h - ((v - min) / (max - min)) * h
+    }));
 
-  ctx.beginPath();
-  ctx.moveTo(pts[0].x, cssH - padY);
-  pts.forEach(p => ctx.lineTo(p.x, p.y));
-  ctx.lineTo(pts[pts.length - 1].x, cssH - padY);
-  ctx.closePath();
-  ctx.fillStyle = grad;
-  ctx.fill();
+    // gradient fill under the line
+    const grad = ctx.createLinearGradient(0, 0, 0, cssH);
+    grad.addColorStop(0, 'rgba(34,217,138,0.35)');
+    grad.addColorStop(1, 'rgba(34,217,138,0.0)');
 
-  // line
-  ctx.beginPath();
-  pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-  ctx.strokeStyle = "#22d98a";
-  ctx.lineWidth = 2.5;
-  ctx.lineJoin = "round";
-  ctx.stroke();
-
-  // dots
-  pts.forEach(p => {
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-    ctx.fillStyle = "#0a0e0d";
+    ctx.moveTo(pts[0].x, cssH - padY);
+    pts.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.lineTo(pts[pts.length - 1].x, cssH - padY);
+    ctx.closePath();
+    ctx.fillStyle = grad;
     ctx.fill();
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = "#22d98a";
+
+    // line
+    ctx.beginPath();
+    pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+    ctx.strokeStyle = '#22d98a';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
     ctx.stroke();
+
+    // dots
+    pts.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#0a0e0d';
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#22d98a';
+      ctx.stroke();
+    });
   });
 }
 
