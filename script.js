@@ -208,13 +208,23 @@ function wireTimeframeButtons(){
 /* ---------------- Mobile nav ---------------- */
 function wireMobileNav(){
   const hamburger = document.getElementById("hamburger");
-  const links = document.querySelector(".nav-links");
-  if(!hamburger || !links) return;
+  const navLinks = document.querySelector(".nav-links");
+  if(!hamburger || !navLinks) return;
+
   hamburger.addEventListener("click", () => {
-    const open = links.style.display === "flex";
-    links.style.cssText = open
-      ? ""
-      : "display:flex; position:absolute; top:64px; left:0; right:0; background:#0d1412; flex-direction:column; padding:16px 24px; border-bottom:1px solid #1e2b27; gap:16px;";
+    navLinks.classList.toggle("mobile-open");
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("mobile-open");
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if(window.innerWidth > 980){
+      navLinks.classList.remove("mobile-open");
+    }
   });
 }
 
