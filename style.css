@@ -176,29 +176,36 @@ header.site-header{
 .portfolio-card .card-head .gain span{ display:block; font-size:11px; color:var(--text-faint); font-weight:500; }
 .chart-labels{ display:flex; justify-content:space-between; margin-top:8px; font-size:11px; color: var(--text-faint); font-family: var(--font-mono); }
 
+.director-summary{ margin: 0 auto 32px; }
+.director-summary h4{ font-family: var(--font-display); font-size: 20px; margin-bottom: 14px; }
+.director-summary h5{ font-size: 16px; margin-top: 22px; margin-bottom: 10px; }
+.director-summary p{ color: var(--text-dim); line-height: 1.75; margin-bottom: 0; }
+.director-summary ul{ margin: 0; padding-left: 20px; color: var(--text-dim); }
+.director-summary li{ margin-bottom: 12px; line-height: 1.7; }
+
 /* ---------- Director ---------- */
 .director-grid{
-  display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items:center;
+  display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; align-items:start;
 }
-.director-photo{
+.director-card{
   background: var(--card); border:1px solid var(--card-border); border-radius: var(--radius);
-  padding: 26px; text-align:center; box-shadow: 0 12px 30px -18px rgba(20,40,32,0.18);
+  padding: 30px; box-shadow: 0 12px 30px -18px rgba(20,40,32,0.18);
 }
-.director-photo .avatar{
-  width: 100%; aspect-ratio: 4/3; border-radius: var(--radius-sm);
-  background: radial-gradient(circle at 30% 20%, #eaf6f0, #dceee5 75%);
-  display:flex; align-items:center; justify-content:center; margin-bottom: 18px;
-  border: 1px solid var(--card-border); overflow:hidden;
+.director-card .eyebrow{ display:block; margin-bottom: 12px; }
+.director-card h3{ font-family: var(--font-display); font-size: 28px; margin: 0 0 8px; }
+.director-card .role{ color: var(--accent); font-weight:600; margin-bottom: 16px; font-size:15px; }
+.director-card > p{ color: var(--text-dim); margin-bottom: 26px; }
+.director-card .feature-row{ display:flex; gap:16px; margin-bottom: 22px; }
+.director-card .feature-icon{
+  flex:0 0 auto; width:38px; height:38px; border-radius:10px; background: var(--accent-bg);
+  color: var(--accent); display:flex; align-items:center; justify-content:center; font-size:17px;
 }
-.bar-row{ display:flex; justify-content:space-between; font-size:12px; color: var(--text-faint); margin: 14px 0 4px; }
-.bar{ height:5px; border-radius:4px; background:#e1ebe6; overflow:hidden; margin-bottom:14px; }
-.bar i{ display:block; height:100%; background: linear-gradient(90deg, var(--accent-dim), var(--accent)); border-radius:4px; }
-.social-row{ display:flex; gap:10px; justify-content:center; margin-top:14px; }
-.social-row a, .contact-social a{
-  width:34px; height:34px; border-radius:50%; border:1px solid var(--card-border);
-  display:flex; align-items:center; justify-content:center; color: var(--text-dim); font-size:14px; transition:.15s;
-}
-.social-row a:hover, .contact-social a:hover{ border-color: var(--accent-dim); color: var(--accent); }
+.director-card .feature-row h5{ font-size:15px; margin-bottom:4px; }
+.director-card .feature-row p{ font-size: 13.5px; color: var(--text-dim); }
+.director-card .link-arrow{ margin-top: 8px; display:inline-flex; color: var(--accent); font-weight:600; font-size:14px; gap:6px; }
+
+.director-photo,
+.social-row{ display:none; }
 
 .director-name-block h3{ font-family: var(--font-display); font-size: 30px; margin: 10px 0 4px; }
 .director-name-block .role{ color: var(--accent); font-weight:600; margin-bottom: 16px; font-size:15px; }
@@ -257,6 +264,12 @@ header.site-header{
 .service-card li{ font-size:13px; color: var(--text-dim); margin-bottom:6px; display:flex; gap:8px; }
 .service-card li::before{ content:"✓"; color: var(--accent); font-weight:700; }
 .service-card .link-arrow{ font-size:13px; }
+
+.vision-summary{ max-width: 760px; margin: 0 auto; padding-top: 32px; }
+.vision-summary p{ color: var(--text-dim); font-size: 15.5px; line-height: 1.85; margin-bottom: 18px; }
+.vision-summary p:last-child{ margin-bottom: 0; }
+.vision-summary .vision-line{ color: var(--text); font-size: 16px; font-weight: 600; }
+.vision-summary .vision-line strong{ color: var(--text); font-weight: 700; }
 
 .icon-blue{ background: linear-gradient(145deg,#4a8ef2,#2f6ad1); }
 .icon-purple{ background: linear-gradient(145deg,#a06bf0,#7a45d1); }
