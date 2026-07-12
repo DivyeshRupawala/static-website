@@ -258,7 +258,7 @@ header.site-header{
 .ohlc-box.high b{ color: var(--accent); }
 
 /* ---------- Services ---------- */
-.services-grid{ display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.services-grid{ display:grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 .service-card{
   background: var(--card); border:1px solid var(--card-border); border-radius: var(--radius);
   padding: 28px; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
@@ -336,7 +336,7 @@ header.site-header{
 .contact-item .ic{ width:38px; height:38px; border-radius:10px; background: var(--accent-bg); color: var(--accent); display:flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; }
 .contact-item b{ display:block; font-size:14px; }
 .contact-item span{ font-size:13px; color: var(--text-dim); }
-.contact-social{ display:flex; gap:10px; margin-top: 24px; }
+.contact-social{ display:flex; justify-content:center; gap:10px; margin-top: 24px; }
 
 .form-card{ background: var(--card); border:1px solid var(--card-border); border-radius: var(--radius); padding: 30px; box-shadow: 0 12px 30px -18px rgba(20,40,32,0.18); }
 .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom:16px; }
@@ -361,8 +361,8 @@ footer .logo{ display:flex; align-items:flex-start; gap: 14px; color: #ffffff; m
 .logo-text{ display:flex; flex-direction:column; }
 .logo-text .brand-name{ font-size: 17px; font-weight: 700; color: #ffffff; line-height:1.15; }
 .logo-text .sub{ font-size: 12px; color: rgba(255,255,255,0.72); letter-spacing: .05em; margin-top: 3px; max-width: 260px; }
-.footer-brand p{ color: rgba(255,255,255,0.68); font-size: 14px; line-height: 1.85; max-width: 360px; margin: 0; }
-.footer-social{ display:flex; gap: 10px; }
+.footer-brand p{ color: rgba(255,255,255,0.68); font-size: 14px; line-height: 1.85; max-width: 360px; margin: 0; text-align: center; }
+.footer-social{ display:flex; justify-content:center; gap: 10px; width: 100%; }
 .footer-social a{ width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.06); color: #ffffff; display:flex; align-items:center; justify-content:center; font-size: 14px; transition: background .2s ease, transform .2s ease; }
 .footer-social a:hover{ background: rgba(255,255,255,0.16); transform: translateY(-1px); }
 .footer-grid h5{ font-size: 13px; margin-bottom: 18px; color: #ffffff; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
