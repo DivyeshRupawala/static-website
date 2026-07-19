@@ -375,46 +375,196 @@ header.site-header{
 .ohlc-box.low b{ color: var(--red); }
 .ohlc-box.high b{ color: var(--clay); }
 
-/* ---------- Services ---------- */
-.services-grid{ display:grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+/* ---------- Services / Vision / Investment tiles (Centricity product-tile style) ---------- */
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Per-section column counts (full-width desktop) */
+#what-we-do .services-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#vision .services-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#services .services-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#markets .services-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#mission .services-grid{ grid-template-columns: 1fr; }
+
+/* Vertical stripe texture shared by all tiles */
 .service-card{
-  background: var(--card);
-  border:1px solid var(--card-border);
-  border-radius: var(--radius);
-  padding: 28px;
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-  box-shadow: 0 12px 28px -20px rgba(28, 23, 18, 0.18);
-  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 12px;
+  padding: 26px 24px 28px;
+  min-height: 220px;
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  box-shadow: 0 14px 32px -18px rgba(28, 23, 18, 0.45);
+  /* default tile: charcoal vertical bars */
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.04) 0 12%,
+      transparent 12% 24%,
+      rgba(255,255,255,0.03) 24% 36%,
+      transparent 36% 48%,
+      rgba(0,0,0,0.12) 48% 60%,
+      transparent 60% 72%,
+      rgba(255,255,255,0.03) 72% 84%,
+      transparent 84% 100%
+    ),
+    linear-gradient(160deg, #3a322c 0%, #1c1712 100%);
 }
 .service-card:hover{
   transform: translateY(-4px);
-  border-color: rgba(169, 103, 59, 0.35);
-  box-shadow: 0 18px 34px -18px rgba(28, 23, 18, 0.24);
+  box-shadow: 0 22px 40px -16px rgba(28, 23, 18, 0.5);
+  filter: brightness(1.06);
 }
-.service-icon{
-  width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center;
-  font-size:19px; margin-bottom:18px; color:#fff;
-}
-.service-card h4{
-  font-size:22px; margin-bottom:12px;
-  font-family: var(--font-display);
-  color: var(--ink);
-  font-weight:600;
-  line-height:1.15;
-}
-.service-card p{ color: var(--text-dim); font-size: 14.6px; margin-bottom:16px; line-height:1.85; }
-.service-card ul{ margin-bottom: 16px; padding-left: 18px; list-style: none; }
-.service-card li{ font-size:13px; color: var(--text-dim); margin-bottom:10px; display:flex; gap:10px; }
-.service-card li::before{ content:"✓"; color: var(--clay); font-weight:700; }
-.service-card .link-arrow{ font-size:13px; }
 
-.vision-summary{ max-width: 760px; margin: 0 auto; padding-top: 32px; }
+/* Corner arrow (Centricity tile cue) */
+.service-card .card-arrow{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 237, 226, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: rgba(244, 237, 226, 0.75);
+  line-height: 1;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.service-card:hover .card-arrow{
+  background: rgba(244, 237, 226, 0.12);
+  color: var(--cream);
+  border-color: rgba(244, 237, 226, 0.45);
+}
+
+/* Hide legacy emoji icons inside tile cards */
+.service-card .service-icon{ display: none; }
+
+.service-card h4{
+  font-size: clamp(20px, 2.1vw, 24px);
+  margin: 0 36px 14px 0;
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+.service-card p{
+  color: rgba(244, 237, 226, 0.78);
+  font-size: 14.2px;
+  margin-bottom: 14px;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+.service-card ul{
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.service-card li{
+  font-size: 13px;
+  color: rgba(244, 237, 226, 0.72);
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.service-card li:last-child{ margin-bottom: 0; }
+.service-card li::before{
+  content: "✓";
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.service-card li strong,
+.service-card li b{ color: var(--cream); font-weight: 600; }
+.service-card .link-arrow{
+  font-size: 13px;
+  color: var(--gold);
+  margin-top: 12px;
+}
+
+/* Tile color variants (from Centricity product strip) */
+.service-card.tile-wine{
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.05) 0 12%, transparent 12% 24%,
+      rgba(255,255,255,0.03) 24% 36%, transparent 36% 48%,
+      rgba(0,0,0,0.18) 48% 60%, transparent 60% 72%,
+      rgba(255,255,255,0.03) 72% 84%, transparent 84% 100%
+    ),
+    linear-gradient(165deg, #5a2420 0%, #2a1010 55%, #1a0c0c 100%);
+}
+.service-card.tile-forest{
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.05) 0 12%, transparent 12% 24%,
+      rgba(255,255,255,0.03) 24% 36%, transparent 36% 48%,
+      rgba(0,0,0,0.16) 48% 60%, transparent 60% 72%,
+      rgba(255,255,255,0.03) 72% 84%, transparent 84% 100%
+    ),
+    linear-gradient(165deg, #3a4a3e 0%, #1e2a24 55%, #121a16 100%);
+}
+.service-card.tile-slate{
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.05) 0 12%, transparent 12% 24%,
+      rgba(255,255,255,0.03) 24% 36%, transparent 36% 48%,
+      rgba(0,0,0,0.2) 48% 60%, transparent 60% 72%,
+      rgba(255,255,255,0.03) 72% 84%, transparent 84% 100%
+    ),
+    linear-gradient(165deg, #2c3a48 0%, #161e28 55%, #0e141a 100%);
+}
+.service-card.tile-ink{
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.04) 0 12%, transparent 12% 24%,
+      rgba(255,255,255,0.025) 24% 36%, transparent 36% 48%,
+      rgba(0,0,0,0.22) 48% 60%, transparent 60% 72%,
+      rgba(255,255,255,0.03) 72% 84%, transparent 84% 100%
+    ),
+    linear-gradient(165deg, #2a2622 0%, #141210 55%, #0a0908 100%);
+}
+.service-card.tile-bronze{
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0.06) 0 12%, transparent 12% 24%,
+      rgba(255,255,255,0.03) 24% 36%, transparent 36% 48%,
+      rgba(0,0,0,0.14) 48% 60%, transparent 60% 72%,
+      rgba(255,255,255,0.04) 72% 84%, transparent 84% 100%
+    ),
+    linear-gradient(165deg, #6a4e2a 0%, #3a2c18 55%, #1e1810 100%);
+}
+
+/* Compact tiles for short vision copy */
+#vision .service-card{
+  min-height: 180px;
+  justify-content: space-between;
+}
+#vision .service-card p{ margin-bottom: 0; max-width: none; }
+
+/* Mission single card can breathe more */
+#mission .service-card{ min-height: auto; padding: 32px 28px; }
+
+.vision-summary{ max-width: 760px; margin: 0 auto; padding-top: 36px; }
 .vision-summary p{ color: var(--text-dim); font-size: 15.5px; line-height: 1.85; margin-bottom: 18px; }
 .vision-summary p:last-child{ margin-bottom: 0; }
 .vision-summary .vision-line{ color: var(--text); font-size: 16px; font-weight: 600; }
 .vision-summary .vision-line strong{ color: var(--clay-dark); font-weight: 700; }
 
-/* Warm service icon gradients (Centricity tones) */
+/* Legacy icon classes retained for any non-tile uses */
 .icon-blue{ background: linear-gradient(145deg, #5a6b7a, #3a4652); }
 .icon-purple{ background: linear-gradient(145deg, #6b5a6a, #4a3a48); }
 .icon-orange{ background: linear-gradient(145deg, #c99a55, #a9673b); }
@@ -643,7 +793,12 @@ footer .logo-text .sub{
   .hero-grid, .director-grid, .contact-grid{ grid-template-columns: 1fr; }
   .market-grid{ grid-template-columns: 1fr 1fr; }
   .market-grid .sentiment-card{ grid-column: 1 / -1; }
-  .services-grid, .testi-grid{ grid-template-columns: 1fr; }
+  .services-grid,
+  #what-we-do .services-grid,
+  #vision .services-grid,
+  #services .services-grid,
+  #markets .services-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .testi-grid{ grid-template-columns: 1fr; }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
   .nav-links{ display:none; }
   .hamburger{ display:block; }
@@ -663,15 +818,20 @@ footer .logo-text .sub{
 #about{ padding-bottom: 36px; }
 #what-we-do{ padding-top: 16px; }
 
-#what-we-do .service-card h4{ min-height: 48px; }
 @media (max-width: 620px){
   .hero h1{ font-size: 36px; }
   .hero .lede{ font-size:18px; }
-  .services-grid, .testi-grid{ grid-template-columns: 1fr; }
+  .services-grid,
+  #what-we-do .services-grid,
+  #vision .services-grid,
+  #services .services-grid,
+  #markets .services-grid,
+  .testi-grid{ grid-template-columns: 1fr; }
   .market-grid{ grid-template-columns: 1fr; }
   .form-row{ grid-template-columns: 1fr; }
   .ohlc-row{ grid-template-columns: 1fr 1fr; }
   .footer-grid{ grid-template-columns: 1fr; }
   .section{ padding: 45px 0; }
   .director-photo img{ height: 360px; }
+  .service-card{ min-height: 0; }
 }
