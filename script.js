@@ -67,10 +67,10 @@ function drawPortfolioChart(){
       y: padY + h - ((v - min) / (max - min)) * h
     }));
 
-    // gradient fill under the line
+    // gradient fill under the line (Centricity clay/gold)
     const grad = ctx.createLinearGradient(0, 0, 0, cssH);
-    grad.addColorStop(0, 'rgba(34,217,138,0.35)');
-    grad.addColorStop(1, 'rgba(34,217,138,0.0)');
+    grad.addColorStop(0, 'rgba(169,103,59,0.32)');
+    grad.addColorStop(1, 'rgba(169,103,59,0.0)');
 
     ctx.beginPath();
     ctx.moveTo(pts[0].x, cssH - padY);
@@ -83,7 +83,7 @@ function drawPortfolioChart(){
     // line
     ctx.beginPath();
     pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-    ctx.strokeStyle = '#22d98a';
+    ctx.strokeStyle = '#a9673b';
     ctx.lineWidth = 2.5;
     ctx.lineJoin = 'round';
     ctx.stroke();
@@ -92,10 +92,10 @@ function drawPortfolioChart(){
     pts.forEach(p => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-      ctx.fillStyle = '#0a0e0d';
+      ctx.fillStyle = '#f4ede2';
       ctx.fill();
       ctx.lineWidth = 2;
-      ctx.strokeStyle = '#22d98a';
+      ctx.strokeStyle = '#a9673b';
       ctx.stroke();
     });
   });
@@ -170,8 +170,8 @@ function drawCandleChart(tfLabel){
     const [o, hi, lo, cl] = c;
     const x = padX + i * slot + slot / 2;
     const up = cl >= o;
-    ctx.strokeStyle = up ? "#22d98a" : "#ef5a5a";
-    ctx.fillStyle = up ? "#22d98a" : "#ef5a5a";
+    ctx.strokeStyle = up ? "#a9673b" : "#c97a6d";
+    ctx.fillStyle = up ? "#a9673b" : "#c97a6d";
 
     // wick
     ctx.beginPath();
