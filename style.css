@@ -474,8 +474,7 @@ header.site-header{
 }
 .float-card span:not(.float-card-icon):not(.float-rating){
   display: block;
-  font-size: 11px;
-  color: var(--text-faint);
+  font-size: 11px;  
   line-height: 1.35;
 }
 .float-card-icon{
@@ -511,7 +510,7 @@ header.site-header{
 .float-rating{
   color: var(--clay) !important;
   font-weight: 600;
-  font-size: 11px !important;
+  font-size: 9px !important;
 }
 
 /* Positions of floating cards */
