@@ -570,8 +570,7 @@ header.site-header{
 .director-showcase-meta .role{
   color: var(--clay);
   font-weight: 700;
-  font-size: 15px;
-  margin: 0 0 10px;
+  font-size: 15px;  
 }
 .director-showcase-meta > p{
   color: var(--text-dim);
