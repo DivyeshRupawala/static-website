@@ -1220,10 +1220,12 @@ footer .logo-text .sub{
   .nav-links.mobile-open a{ padding: 12px 0; }
   .hero-stats{ flex-direction: column; gap: 14px; }
   .btn{ padding: 10px 16px; }
-  .director-stage{ min-height: 360px; }
-  .director-portrait img{ height: 300px; }
-  .float-card{ max-width: 170px; padding: 10px 12px; }
+  .director-stage{ min-height: 400px; padding: 24px 8px 0; }
+  .director-portrait{ width: min(72%, 260px); }
+  .director-portrait img{ height: 320px; }
+  .float-card{ max-width: 168px; padding: 10px 12px; }
   .float-card strong{ font-size: 11.5px; }
+  .float-checklist{ min-width: 150px; padding: 12px 14px; }
   .directors-cta-copy{ padding: 24px 20px; }
 }
 
@@ -1258,35 +1260,133 @@ footer .logo-text .sub{
   .section-head:not(:has(h2)) .eyebrow,
   .section-label{ font-size: 28px; }
   .expertise-pills{ grid-template-columns: 1fr; }
+
+  /* Directors: keep desktop floating-card composition on mobile */
+  .directors-section{ overflow: visible; }
+  .director-showcase-grid{ gap: 56px; }
   .director-stage{
-    min-height: auto;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
+    min-height: 420px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 32px 4px 0;
+    overflow: visible;
   }
-  .director-stage-bg{ display: none; }
+  .director-stage-bg{
+    display: block;
+    inset: 16% 6% 0 10%;
+    border-radius: 22px 22px 0 0;
+  }
+  .director-stage-bg::before{
+    left: -14%;
+    width: 50%;
+    height: 52%;
+  }
   .director-portrait{
-    width: 100%;
-    order: -1;
+    width: min(68%, 220px);
+    order: unset;
+    margin: 0 auto;
   }
   .director-portrait img{
-    height: 300px;
-    border-radius: 16px;
+    height: 290px;
+    border-radius: 16px 16px 0 0;
     object-fit: cover;
+    object-position: top center;
   }
-  .float-card,
+
+  /* Compact floating badges — same layout as desktop */
+  .float-card{
+    position: absolute;
+    z-index: 3;
+    max-width: 142px;
+    width: auto;
+    margin-top: 0;
+    padding: 8px 10px;
+    gap: 7px;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px -12px rgba(28, 23, 18, 0.4);
+  }
+  .float-card-icon{
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  .float-card strong{
+    font-size: 10.5px;
+    margin-bottom: 1px;
+  }
+  .float-card span:not(.float-card-icon):not(.float-rating){
+    font-size: 9.5px;
+    line-height: 1.3;
+  }
+  .float-rating{ font-size: 8.5px !important; }
+
   .float-checklist{
-    position: static;
+    position: absolute;
+    z-index: 3;
     max-width: none;
-    width: 100%;
-    margin-top: 10px;
+    width: auto;
+    margin-top: 0;
+    min-width: 128px;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
-  .float-card--left-top,
-  .float-card--left-mid,
-  .float-card--left-bot,
-  .float-card--right-top,
-  .float-card--right-mid{ inset: auto; }
-  .director-stage .float-card:first-of-type{ margin-top: 14px; }
+  .float-checklist li{
+    font-size: 11px;
+    gap: 7px;
+    margin-bottom: 7px;
+  }
+  .float-checklist .check{
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+
+  /* Tighter card positions so they frame the portrait */
+  .float-card--left-top{ left: 0; top: 14%; }
+  .float-card--left-mid{ left: 0; top: 40%; }
+  .float-card--left-bot{ left: 2%; bottom: 10%; }
+  .float-card--right-top{ right: 0; top: 12%; }
+  .float-card--right-mid{ right: 0; top: 44%; }
+
+  .director-showcase-meta{ padding: 0 4px 4px; }
+  .director-showcase-meta h3{ font-size: 26px; }
+  .director-showcase-meta > p{ font-size: 14.5px; }
   .directors-intro-copy h2{ font-size: 30px; }
   .service-card{ min-height: 0; }
+}
+
+/* Extra-small phones: slightly smaller stage, still floating composition */
+@media (max-width: 400px){
+  .director-stage{
+    min-height: 390px;
+    padding: 28px 0 0;
+  }
+  .director-portrait{ width: min(64%, 200px); }
+  .director-portrait img{ height: 260px; }
+  .float-card{
+    max-width: 128px;
+    padding: 7px 8px;
+    gap: 5px;
+  }
+  .float-card-icon{
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    border-radius: 7px;
+  }
+  .float-card strong{ font-size: 9.5px; }
+  .float-card span:not(.float-card-icon):not(.float-rating){ font-size: 8.5px; }
+  .float-checklist{
+    min-width: 114px;
+    padding: 8px 10px;
+  }
+  .float-checklist li{ font-size: 10px; gap: 6px; margin-bottom: 5px; }
+  .float-checklist .check{ width: 14px; height: 14px; font-size: 8px; }
+  .float-card--left-top{ left: -2px; top: 12%; }
+  .float-card--left-mid{ left: -2px; top: 38%; }
+  .float-card--left-bot{ left: 0; bottom: 8%; }
+  .float-card--right-top{ right: -2px; top: 10%; }
+  .float-card--right-mid{ right: -2px; top: 42%; }
 }
