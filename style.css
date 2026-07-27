@@ -326,7 +326,7 @@ header.site-header{
 /* ---------- Directors (reference showcase layout) ---------- */
 .directors-section{
   background: linear-gradient(180deg, #f7f1e8 0%, var(--cream) 45%, var(--cream) 100%);
-  overflow: hidden;
+  overflow: visible;
   padding-top: 44px;
   padding-bottom: 44px;
 }
@@ -379,7 +379,7 @@ header.site-header{
 .director-showcase-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 40px;
   margin-bottom: 28px;
 }
 
@@ -387,20 +387,22 @@ header.site-header{
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: visible;
 }
 
 /* Portrait stage with floating cards */
 .director-stage{
   position: relative;
-  min-height: 380px;
+  min-height: 400px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 20px 12px 0;
+  padding: 28px 8% 0;
+  overflow: visible;
 }
 .director-stage-bg{
   position: absolute;
-  inset: 12% 10% 0 18%;
+  inset: 12% 18% 0 22%;
   border-radius: 28px 28px 0 0;
   background:
     linear-gradient(145deg, rgba(201, 154, 85, 0.18) 0%, transparent 42%),
@@ -433,7 +435,7 @@ header.site-header{
 .director-portrait{
   position: relative;
   z-index: 2;
-  width: min(78%, 280px);
+  width: min(58%, 240px);
   margin: 0 auto;
 }
 .director-portrait img{
@@ -456,7 +458,7 @@ header.site-header{
   padding: 12px 14px;
   border-radius: 14px;
   box-shadow: 0 14px 32px -16px rgba(28, 23, 18, 0.35);
-  max-width: 200px;
+  max-width: 180px;
   backdrop-filter: blur(6px);
 }
 .float-card strong{
@@ -508,12 +510,12 @@ header.site-header{
   font-size: 9px !important;
 }
 
-/* Positions of floating cards */
-.float-card--left-top{ left: 0; top: 18%; }
-.float-card--left-mid{ left: 2%; top: 42%; }
-.float-card--left-bot{ left: 6%; bottom: 12%; }
-.float-card--right-top{ right: 0; top: 14%; }
-.float-card--right-mid{ right: 0; top: 48%; }
+/* Positions of floating cards — kept outside the portrait so faces stay clear */
+.float-card--left-top{ left: 0; top: 10%; }
+.float-card--left-mid{ left: 0; top: 38%; }
+.float-card--left-bot{ left: 2%; bottom: 10%; }
+.float-card--right-top{ right: 0; top: 8%; }
+.float-card--right-mid{ right: 0; top: 44%; }
 
 .float-checklist{
   position: absolute;
@@ -1215,13 +1217,36 @@ footer .logo-text .sub{
   .nav-links.mobile-open a{ padding: 12px 0; }
   .hero-stats{ flex-direction: column; gap: 14px; }
   .btn{ padding: 10px 16px; }
-  .director-stage{ min-height: 400px; padding: 24px 8px 0; }
-  .director-portrait{ width: min(72%, 260px); }
+  .director-stage{ min-height: 420px; padding: 28px 6% 0; }
+  .director-portrait{ width: min(56%, 230px); }
   .director-portrait img{ height: 320px; }
-  .float-card{ max-width: 168px; padding: 10px 12px; }
+  .float-card{ max-width: 160px; padding: 10px 12px; }
   .float-card strong{ font-size: 11.5px; }
-  .float-checklist{ min-width: 150px; padding: 12px 14px; }
+  .float-checklist{ min-width: 144px; padding: 12px 14px; }
+  .float-card--left-top{ left: 0; top: 8%; }
+  .float-card--left-mid{ left: 0; top: 36%; }
+  .float-card--left-bot{ left: 1%; bottom: 10%; }
+  .float-card--right-top{ right: 0; top: 6%; }
+  .float-card--right-mid{ right: 0; top: 42%; }
   .directors-cta-copy{ padding: 24px 20px; }
+}
+
+/* Laptop / mid desktop: two columns still active — keep badges clear of faces */
+@media (min-width: 981px) and (max-width: 1200px){
+  .director-showcase-grid{ gap: 32px; }
+  .director-stage{ min-height: 390px; padding: 24px 5% 0; }
+  .director-portrait{ width: min(54%, 220px); }
+  .director-portrait img{ height: 320px; }
+  .float-card{ max-width: 158px; padding: 10px 12px; }
+  .float-card strong{ font-size: 11.5px; }
+  .float-card span:not(.float-card-icon):not(.float-rating){ font-size: 10.5px; }
+  .float-checklist{ min-width: 140px; padding: 12px 12px; }
+  .float-checklist li{ font-size: 12px; }
+  .float-card--left-top{ left: 0; top: 8%; }
+  .float-card--left-mid{ left: 0; top: 36%; }
+  .float-card--left-bot{ left: 1%; bottom: 10%; }
+  .float-card--right-top{ right: 0; top: 6%; }
+  .float-card--right-mid{ right: 0; top: 42%; }
 }
 
 /* Tighter related sections — kill empty band between About → What We Do */
@@ -1256,20 +1281,20 @@ footer .logo-text .sub{
   .section-label{ font-size: 28px; }
   .expertise-pills{ grid-template-columns: 1fr; }
 
-  /* Directors: keep desktop floating-card composition on mobile */
+  /* Directors: keep floating-card composition, badges clear of faces */
   .directors-section{ overflow: visible; }
   .director-showcase-grid{ gap: 56px; }
   .director-stage{
-    min-height: 420px;
+    min-height: 440px;
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
-    padding: 32px 4px 0;
+    padding: 36px 4% 0;
     overflow: visible;
   }
   .director-stage-bg{
     display: block;
-    inset: 16% 6% 0 10%;
+    inset: 16% 16% 0 18%;
     border-radius: 22px 22px 0 0;
   }
   .director-stage-bg::before{
@@ -1278,7 +1303,7 @@ footer .logo-text .sub{
     height: 52%;
   }
   .director-portrait{
-    width: min(68%, 220px);
+    width: min(52%, 200px);
     order: unset;
     margin: 0 auto;
   }
@@ -1289,11 +1314,11 @@ footer .logo-text .sub{
     object-position: top center;
   }
 
-  /* Compact floating badges — same layout as desktop */
+  /* Compact floating badges — framed away from portrait */
   .float-card{
     position: absolute;
     z-index: 3;
-    max-width: 142px;
+    max-width: 132px;
     width: auto;
     margin-top: 0;
     padding: 8px 10px;
@@ -1323,7 +1348,7 @@ footer .logo-text .sub{
     max-width: none;
     width: auto;
     margin-top: 0;
-    min-width: 128px;
+    min-width: 118px;
     padding: 10px 12px;
     border-radius: 12px;
   }
@@ -1338,12 +1363,12 @@ footer .logo-text .sub{
     font-size: 9px;
   }
 
-  /* Tighter card positions so they frame the portrait */
-  .float-card--left-top{ left: 0; top: 14%; }
-  .float-card--left-mid{ left: 0; top: 40%; }
-  .float-card--left-bot{ left: 2%; bottom: 10%; }
-  .float-card--right-top{ right: 0; top: 12%; }
-  .float-card--right-mid{ right: 0; top: 44%; }
+  /* Frame the portrait — cards sit in side gutters */
+  .float-card--left-top{ left: 0; top: 8%; }
+  .float-card--left-mid{ left: 0; top: 36%; }
+  .float-card--left-bot{ left: 1%; bottom: 8%; }
+  .float-card--right-top{ right: 0; top: 6%; }
+  .float-card--right-mid{ right: 0; top: 40%; }
 
   .director-showcase-meta{ padding: 0 4px 4px; }
   .director-showcase-meta h3{ font-size: 26px; }
@@ -1355,13 +1380,13 @@ footer .logo-text .sub{
 /* Extra-small phones: slightly smaller stage, still floating composition */
 @media (max-width: 400px){
   .director-stage{
-    min-height: 390px;
-    padding: 28px 0 0;
+    min-height: 400px;
+    padding: 32px 2% 0;
   }
-  .director-portrait{ width: min(64%, 200px); }
+  .director-portrait{ width: min(48%, 170px); }
   .director-portrait img{ height: 260px; }
   .float-card{
-    max-width: 128px;
+    max-width: 118px;
     padding: 7px 8px;
     gap: 5px;
   }
@@ -1374,14 +1399,14 @@ footer .logo-text .sub{
   .float-card strong{ font-size: 9.5px; }
   .float-card span:not(.float-card-icon):not(.float-rating){ font-size: 8.5px; }
   .float-checklist{
-    min-width: 114px;
+    min-width: 104px;
     padding: 8px 10px;
   }
   .float-checklist li{ font-size: 10px; gap: 6px; margin-bottom: 5px; }
   .float-checklist .check{ width: 14px; height: 14px; font-size: 8px; }
-  .float-card--left-top{ left: -2px; top: 12%; }
-  .float-card--left-mid{ left: -2px; top: 38%; }
-  .float-card--left-bot{ left: 0; bottom: 8%; }
-  .float-card--right-top{ right: -2px; top: 10%; }
-  .float-card--right-mid{ right: -2px; top: 42%; }
+  .float-card--left-top{ left: 0; top: 6%; }
+  .float-card--left-mid{ left: 0; top: 34%; }
+  .float-card--left-bot{ left: 0; bottom: 6%; }
+  .float-card--right-top{ right: 0; top: 4%; }
+  .float-card--right-mid{ right: 0; top: 38%; }
 }
