@@ -31,12 +31,19 @@ function renderTicker(){
 /* ---------------- Contact info (from content.js) ---------------- */
 function renderContactInfo(){
   const c = SITE_CONTENT.contact;
-  const emailEl = document.querySelector(".contact-item:nth-of-type(1) span");
-  const phoneEl = document.querySelector(".contact-item:nth-of-type(2) span");
-  const addrEl  = document.querySelector(".contact-item:nth-of-type(3) span");
+  const emailEl = document.querySelector('[data-contact="email"] span');
+  const phoneEl = document.querySelector('[data-contact="phone"] .contact-phones');
+  const addrEl  = document.querySelector('[data-contact="address"] span');
+
   if(emailEl) emailEl.textContent = c.email;
-  if(phoneEl) phoneEl.textContent = c.phone;
-  if(addrEl)  addrEl.textContent  = c.address;
+
+  if(phoneEl && Array.isArray(c.phones)){
+    phoneEl.innerHTML = c.phones.map((p, i) =>
+      `<a href="${p.href}">${p.number}</a> (${p.label})${i < c.phones.length - 1 ? "<br>" : ""}`
+    ).join("");
+  }
+
+  if(addrEl) addrEl.textContent = c.address;
 }
 
 /* ---------------- Hero line chart ---------------- */

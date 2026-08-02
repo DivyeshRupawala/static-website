@@ -55,9 +55,12 @@ const SITE_CONTENT = {
   },
 
   contact: {
-    email: "support@bullbraincapital.com",
-    phone: "+91 98765 43210",
-    address: "Financial District, Mumbai, India"
+    email: "contact@thebullbrain.com",
+    phones: [
+      { number: "+91-9359954554", label: "India", href: "tel:+919359954554" },
+      { number: "+971-509921417", label: "Dubai", href: "tel:+971509921417" }
+    ],
+    address: "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE"
   },
 
   /* -----------------------------------------------------------
