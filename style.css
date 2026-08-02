@@ -1035,19 +1035,53 @@ header.site-header{
 .mini-stats div span{ font-size:10.5px; color: var(--text-faint); }
 
 /* ---------- Testimonials ---------- */
-.testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.testimonials-carousel{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+.carousel-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(28,23,18,0.08);
+  border: 1px solid rgba(28,23,18,0.1);
+  color: var(--ink);
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.carousel-btn:hover{
+  background: rgba(28,23,18,0.12);
+  transform: translateY(-1px);
+}
+.testi-carousel-track-wrap{
+  overflow: hidden;
+}
+.testi-carousel-track{
+  display: flex;
+  gap: 16px;
+  will-change: transform;
+}
 .testi-card{
   background: var(--card);
   border:1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: 0 12px 28px -20px rgba(28, 23, 18, 0.16);
+  padding: 24px;
+  box-shadow: 0 16px 34px -22px rgba(28, 23, 18, 0.18);
+  min-width: min(100%, 360px);
+  flex: 0 0 360px;
 }
-.stars{ color: var(--gold); letter-spacing:2px; margin-bottom:12px; font-size:15px; }
-.testi-card p{ color: var(--text-dim); font-size: 15.5px; margin-bottom: 16px; line-height: 1.65; font-weight: 500; }
+.stars{ color: var(--gold); letter-spacing:2px; margin-bottom:16px; font-size:15px; }
+.testi-card p{ color: var(--text-dim); font-size: 15.5px; margin-bottom: 18px; line-height: 1.75; font-weight: 500; }
 .testi-person{ display:flex; align-items:center; gap:12px; }
 .avatar-circle{
-  width:38px; height:38px; border-radius:50%;
+  width:42px; height:42px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; font-size:13px; color: var(--cream); flex:0 0 auto;
 }
@@ -1238,6 +1272,10 @@ footer .logo-text .sub{
   .footer-brand{ flex-direction: column; align-items: flex-start; }
   .footer-grid{ gap: 24px; }
   .footer-links{ padding-top: 0; }
+  .testimonials-carousel{ grid-template-columns: 1fr; }
+  .testi-carousel-track{ gap: 12px; }
+  .testi-card{ min-width: 280px; flex: 0 0 280px; }
+  .carousel-btn{ width: 36px; height: 36px; font-size: 20px; }
 
   .director-showcase-grid{ grid-template-columns: 1fr; gap: 48px; }
   .expertise-pills{ grid-template-columns: 1fr 1fr; }
