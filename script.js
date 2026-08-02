@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireMobileNav();
   wireContactForm();
   wireTestimonialCarousel();
+  wireTestimonialTooltips();
   wireLoginPlaceholder();
 });
 
@@ -285,6 +286,12 @@ function wireContactForm(){
     status.textContent = "Thanks! Your message has been received. Our team will reach out within 24 hours.";
     status.className = "form-status ok";
     form.reset();
+  });
+}
+
+function wireTestimonialTooltips(){
+  document.querySelectorAll('.testimonial-text').forEach(el => {
+    el.setAttribute('title', el.textContent.trim());
   });
 }
 

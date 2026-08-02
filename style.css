@@ -1067,8 +1067,12 @@ header.site-header{
   display: flex;
   gap: 16px;
   will-change: transform;
+  align-items: stretch;
 }
 .testi-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: var(--card);
   border:1px solid var(--card-border);
   border-radius: var(--radius);
@@ -1076,10 +1080,22 @@ header.site-header{
   box-shadow: 0 16px 34px -22px rgba(28, 23, 18, 0.18);
   min-width: min(100%, 360px);
   flex: 0 0 360px;
+  height: 300px;
 }
 .stars{ color: var(--gold); letter-spacing:2px; margin-bottom:16px; font-size:15px; }
-.testi-card p{ color: var(--text-dim); font-size: 15.5px; margin-bottom: 18px; line-height: 1.75; font-weight: 500; }
-.testi-person{ display:flex; align-items:center; gap:12px; }
+.testimonial-text{
+  color: var(--text-dim);
+  font-size: 15.5px;
+  margin-bottom: 18px;
+  line-height: 1.75;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.testi-person{ display:flex; align-items:center; gap:12px; margin-top: auto; }
 .avatar-circle{
   width:42px; height:42px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
