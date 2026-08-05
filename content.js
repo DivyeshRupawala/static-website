@@ -55,7 +55,7 @@ const SITE_CONTENT = {
   },
 
   contact: {
-    email: "contact@thebullbrain.com",
+    email: "info@thebullbrain.com",
     phones: [
       { number: "+91-9359954554", label: "India", href: "tel:+919359954554" },
       { number: "+971-509921417", label: "Dubai", href: "tel:+971509921417" }

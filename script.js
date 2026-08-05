@@ -33,11 +33,14 @@ function renderTicker(){
 /* ---------------- Contact info (from content.js) ---------------- */
 function renderContactInfo(){
   const c = SITE_CONTENT.contact;
-  const emailEl = document.querySelector('[data-contact="email"] span');
+  const emailEl = document.querySelector('[data-contact="email"] a');
   const phoneEl = document.querySelector('[data-contact="phone"] .contact-phones');
   const addrEl  = document.querySelector('[data-contact="address"] span');
 
-  if(emailEl) emailEl.textContent = c.email;
+  if(emailEl){
+    emailEl.textContent = c.email;
+    emailEl.href = `mailto:${c.email}`;
+  }
 
   if(phoneEl && Array.isArray(c.phones)){
     phoneEl.innerHTML = c.phones.map((p, i) =>
