@@ -355,21 +355,22 @@ header.site-header{
 
 .testimonial-popup{
   position: fixed;
-  z-index: 80;
+  z-index: 9999;
   inset: 0;
   display: none;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(8px);
   background: rgba(28,23,18,0.42);
-  padding: 20px;
+  padding: 16px;
 }
 .testimonial-popup.is-open{
   display:flex;
 }
 .testimonial-popup-card{
-  width: min(100%, 680px);
-  max-height: min(100%, 88vh);
+  width: 100%;
+  max-width: 680px;
+  max-height: 88vh;
   overflow-y: auto;
   background: #fff;
   border-radius: 28px;
@@ -377,6 +378,7 @@ header.site-header{
   box-shadow: 0 40px 120px rgba(28,23,18,0.18);
   border: 1px solid rgba(28,23,18,0.1);
   position: relative;
+  box-sizing: border-box;
 }
 .testimonial-popup-close{
   position: absolute;
@@ -425,18 +427,22 @@ header.site-header{
 @media (max-width: 860px){
   .testimonials-carousel{ flex-direction:column; }
   .carousel-btn{ width: 48px; height: 48px; }
+  .testi-carousel-track-wrap{ width: 100%; min-width: 0; }
   .testi-carousel-track{
     gap: 16px;
     padding: 18px;
+    width: 100%;
+    min-width: 0;
   }
   .testi-card{ min-width: 270px; max-width: 280px; }
 }
 
 @media (max-width: 700px){
   .testimonials-carousel{ gap: 12px; }
-  .testi-card{ min-width: 100%; max-width: 100%; }
+  .testi-carousel-track-wrap{ width: 100%; min-width: 0; }
+  .testi-card{ min-width: 100%; max-width: 100%; width: 100%; }
   .testimonial-popup-card{ width: 100%; padding: 20px; }
-  .testimonial-popup-header{ flex-direction:column; align-items:flex-start; }
+  .testimonial-popup-header{ align-items:flex-start; }
 }
 
 .contact-phones{
