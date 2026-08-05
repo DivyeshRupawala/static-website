@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
@@ -537,61 +538,82 @@
         <button class="carousel-btn carousel-prev" aria-label="Previous testimonial">‹</button>
         <div class="testi-carousel-track-wrap">
           <div class="testi-carousel-track">
-            <div class="testi-card">
+            <div class="testi-card" data-testimonial="long">
               <div class="stars">★★★★★</div>
               <p class="testimonial-text">“I have been associated with Parul Singh for more than a year, and my experience has been excellent. Her in-depth knowledge of the Indian stock market and Forex trading, combined with a strong understanding of global market trends, truly sets her apart.
               What I appreciate most is her disciplined approach, market insights, and ability to identify high-probability, profitable trading opportunities. Her guidance is backed by experience, sound analysis, and a practical understanding of market dynamics rather than speculation.
               Beyond her expertise, Parul is trustworthy, dependable, and always committed to helping her clients make informed trading decisions. I highly recommend her to anyone looking for a knowledgeable and reliable mentor or market professional.”</p>
+              <button type="button" class="testi-readmore">Read more</button>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#7c5a2a">AM</div>
-                <div><b>Abinash Misro</b><span>Market Professional</span></div>
+                <div><b>Abinash Misro</b><span>HNI Investor</span></div>
               </div>
             </div>
-            <div class="testi-card">
+            <div class="testi-card" data-testimonial="long">
               <div class="stars">★★★★★</div>
               <p class="testimonial-text">“I have had the privilege of collaborating with Parul Singh for over a year, and the experience has been exemplary. Her profound command of Indian equities and Forex, coupled with astute insight into global market dynamics, distinguishes her as a true professional.
               What I value most is her disciplined, analytical rigor in identifying high-probability opportunities grounded in experience and sound judgment rather than conjecture. Parul embodies integrity, reliability, and an unwavering commitment to her clients' success.
               I unreservedly recommend her as an exceptional market professional and mentor.”</p>
+              <button type="button" class="testi-readmore">Read more</button>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#5a4b7a">SP</div>
-                <div><b>Srikant Patro</b><span>Investment Strategist</span></div>
+                <div><b>Srikant Patro</b><span>HNI Investor</span></div>
               </div>
             </div>
             <div class="testi-card">
               <div class="stars">★★★★★</div>
-              <p>“The education and mentorship helped me go from uncertainty to structured decision-making. The risk-first approach changed my trading mindset.”</p>
+              <p class="testimonial-text">“The education and mentorship helped me go from uncertainty to structured decision-making. The risk-first approach changed my trading mindset.”</p>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#a9673b">RK</div>
-                <div><b>Rajesh Kumar</b><span>Portfolio Manager, Mumbai</span></div>
+                <div><b>Rajesh Kumar</b><span>HNI Investor</span></div>
               </div>
             </div>
             <div class="testi-card">
               <div class="stars">★★★★★</div>
-              <p>“As a beginner, I felt lost in the markets. Their training modules gave me clarity on technical analysis, risk, and psychology.”</p>
+              <p class="testimonial-text">“As a beginner, I felt lost in the markets. Their training modules gave me clarity on technical analysis, risk, and psychology.”</p>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#5a6b7a">PS</div>
-                <div><b>Priya Sharma</b><span>Retail Trader, Bangalore</span></div>
+                <div><b>Priya Sharma</b><span>HNI Investor</span></div>
               </div>
             </div>
             <div class="testi-card">
               <div class="stars">★★★★★</div>
-              <p>“Their research-backed style and structured mentoring exceeded my expectations. The process is disciplined, transparent, and practical.”</p>
+              <p class="testimonial-text">“Their research-backed style and structured mentoring exceeded my expectations. The process is disciplined, transparent, and practical.”</p>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#c99a55">AM</div>
-                <div><b>Amit Mehta</b><span>HNI Investor, Delhi</span></div>
+                <div><b>Amit Mehta</b><span>HNI Investor</span></div>
               </div>
             </div>
             <div class="testi-card">
               <div class="stars">★★★★★</div>
-              <p>“In just a few weeks, I learned how to read charts and size trades with confidence. My results are more consistent and less stressful now.”</p>
+              <p class="testimonial-text">“In just a few weeks, I learned how to read charts and size trades with confidence. My results are more consistent and less stressful now.”</p>
               <div class="testi-person">
                 <div class="avatar-circle" style="background:#4e5f3a">NP</div>
-                <div><b>Neha Patel</b><span>Swing Trader, Ahmedabad</span></div>
+                <div><b>Neha Patel</b><span>HNI Investor</span></div>
+              </div>
+            </div>
+            <div class="testi-card" data-testimonial="long">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">“I was introduced to Parul-ji two years ago through a close friend, and it has been an incredible journey since. Her expertise in managing both Indian and Forex market portfolios has significantly improved our investment strategy, delivering consistent returns and cumulative wealth growth. Beyond the financial gains, her mentorship in technical analysis has completely transformed how I view the markets. I look forward to many more successful years of growing together.”</p>
+              <button type="button" class="testi-readmore">Read more</button>
+              <div class="testi-person">
+                <div class="avatar-circle" style="background:#4a4f7a">DR</div>
+                <div><b>Divyesh Rupawala</b><span>HNI Investor</span></div>
               </div>
             </div>
           </div>
         </div>
         <button class="carousel-btn carousel-next" aria-label="Next testimonial">›</button>
+      </div>
+      <div class="testimonial-popup" id="testimonialPopup" aria-hidden="true">
+        <div class="testimonial-popup-card">
+          <button class="testimonial-popup-close" id="testimonialPopupClose" aria-label="Close testimonial details">×</button>
+          <div class="testimonial-popup-header">
+            <div class="testimonial-popup-stars">★★★★★</div>
+            <div class="testimonial-popup-person"></div>
+          </div>
+          <div class="testimonial-popup-body"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -625,9 +647,9 @@
         </div>
 
         <div class="contact-social">
-          <a href="https://twitter.com/bullbraincapital" aria-label="Twitter" target="_blank" rel="noopener noreferrer" title="Twitter">𝕏</a>
-          <a href="https://www.instagram.com/bullbraincapital" aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
-          <a href="https://t.me/bullbraincapital" aria-label="Telegram" target="_blank" rel="noopener noreferrer" title="Telegram">✈</a>
+          <a href="https://x.com/thebullbrain?s=11&t=S1n1UKZniKSchE7X35WOWw" aria-label="X" target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+          <a href="https://www.instagram.com/thebullbrain?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">📸</a>
+          <a href="https://t.me/wondersofcharts" aria-label="Telegram" target="_blank" rel="noopener noreferrer" title="Telegram">✈</a>
           <a href="https://wa.me/919359954554" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp">📱</a>
         </div>
       </div>

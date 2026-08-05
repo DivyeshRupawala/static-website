@@ -290,8 +290,47 @@ function wireContactForm(){
 }
 
 function wireTestimonialTooltips(){
-  document.querySelectorAll('.testimonial-text').forEach(el => {
-    el.setAttribute('title', el.textContent.trim());
+  const popup = document.getElementById('testimonialPopup');
+  const popupClose = document.getElementById('testimonialPopupClose');
+  const popupBody = popup.querySelector('.testimonial-popup-body');
+  const popupPerson = popup.querySelector('.testimonial-popup-person');
+  const popupStars = popup.querySelector('.testimonial-popup-stars');
+
+  const closePopup = () => {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+  };
+
+  const openPopup = (text, person, stars) => {
+    popupBody.textContent = text;
+    popupPerson.textContent = person;
+    popupStars.textContent = stars;
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+  };
+
+  document.querySelectorAll('.testi-card').forEach(card => {
+    const textEl = card.querySelector('.testimonial-text');
+    const personName = card.querySelector('.testi-person b')?.textContent || 'Client';
+    const stars = card.querySelector('.stars')?.textContent || '★★★★★';
+    const fullText = textEl ? textEl.textContent.trim() : '';
+    const readMore = card.querySelector('.testi-readmore');
+
+    if(!textEl || !readMore) return;
+
+    readMore.addEventListener('click', () => {
+      if(fullText.length > 0){
+        openPopup(fullText, personName, stars);
+      }
+    });
+  });
+
+  popupClose.addEventListener('click', closePopup);
+  popup.addEventListener('click', (event) => {
+    if(event.target === popup) closePopup();
+  });
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape') closePopup();
   });
 }
 
